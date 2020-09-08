@@ -24,7 +24,13 @@ You might been asking, why make things so complicated, use docker container with
 
 In the modern days, if you're performing "network-level" scan or IP scan, you will stuck most of the time with the similar answers, like, OpenBSD, NetBSD, Linux with some older kernels, even sometimes AIX and other weird OS.
 
-This is not wrong, actually, as the routers and load balancers and network infrastructure does indeed work with OpenBSD, NetBSD and some Linux devices most of the time. But you are getting the wrong answers! They are not about OS of the webserver. They are about OS of intermediary network infrastructure! When the aim of this project is to find out OS of the Web server. Nowadays webservers are often hidden behind (pun not intended) a lot of layers of physical and virtual networking infrastructure (load-balancers, cache servers, CDNs, etc.). To find this intermediary infrastructure OS versions or fingerprint it, of course, you can use nmap and all this stuff. However, to find an actual webserver OS, in the modern era, we have to actually deal with HTTP traffic and sometimes even the website code itself - to try to find a host operating system, if told. This is not always the case, and that's why some (or most) of the results are blank (which can be treated as "os unknown"). So Wappalyzer container does that for us - it loads an "actual page" and tries to guess the webserver OS. Just what was requested.
+This is not wrong, actually, as the routers and load balancers and network infrastructure does indeed work with OpenBSD, NetBSD and some Linux devices most of the time. But you are getting answer for a different question! About network infrastructure. They are not about OS of the webserver! They are about OS of intermediary network infrastructure. 
+
+When the aim of this project is to find out OS of the Web server. Nowadays webservers are often hidden behind (pun not intended) a lot of layers of physical and virtual networking infrastructure (load-balancers, cache servers, CDNs, etc.). To find this intermediary infrastructure OS versions or fingerprint it, of course, you can use nmap and all this stuff.
+
+However, to find an actual webserver OS, in the modern era, we have to actually deal with HTTP traffic and sometimes even the website code itself - to try to find a host operating system, if told by the server. This is not always the case, and that's why some (or most) of the results are blank (which can be treated as "os unknown"). 
+
+So Wappalyzer container does actual analyzing for us - it loads an "actual page" and tries to guess the webserver OS. Just what was requested.
 
 Hope this explains the reasons behind this small scanner project.
 
