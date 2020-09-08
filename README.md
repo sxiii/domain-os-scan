@@ -20,4 +20,4 @@ The solution utilizes Wappalyzer CLI docker container.
 Results are saved as JSON files into the ./json subfolder.
 
 ## How the results look?
-
+![example](example.png)
